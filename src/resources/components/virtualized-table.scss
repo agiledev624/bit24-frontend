@@ -1,0 +1,312 @@
+.cpn-virtualized-table__wrapper {
+  transform: translateX(0);
+  // height: 100% !important;
+  // overflow: hidden;
+  // color: var(--silver-300);
+
+  .ReactVirtualized__Table__Grid {
+    padding-top: 27px;
+  }
+
+  // .track-vertical {
+  //     visibility: hidden;
+  //     opacity: 0;
+  //     transition: visibility 0.1s, opacity 0.3s linear;
+  //     right: 2px;
+  //     bottom: 2px;
+  //     & > div {
+  //         background: #888 !important;
+  //         border-radius: 4px !important;
+  //         transition: background-color 0.3s linear;
+
+  //         &:hover {
+  //             background: #aaa !important;
+  //         }
+  //     }
+  // }
+
+  // &:hover .track-vertical {
+  //     visibility: visible;
+  //     opacity: 1;
+  //     background: transparent;
+  // }
+
+  .ps--active-x > .ps__rail-x,
+  .ps--active-y > .ps__rail-y {
+    z-index: 99;
+  }
+}
+
+.cpn-virtualized-table__wrapper .ReactVirtualized__Table__Grid {
+  will-change: auto !important;
+}
+
+.cpn-virtualized-table__wrapper .ReactVirtualized__Grid {
+  visibility: hidden;
+  overflow: scroll;
+}
+
+.cpn-virtualized-table__wrapper .ReactVirtualized__Grid:not(:root),
+.cpn-virtualized-table__wrapper .ReactVirtualized__Grid__innerScrollContainer {
+  visibility: visible;
+  // @removed perfect-scrollbar
+  overflow: inherit !important;
+}
+
+.cpn-virtualized-table__wrapper .ReactVirtualized__Grid::-webkit-scrollbar,
+.cpn-virtualized-table__wrapper
+  .ReactVirtualized__Grid__innerScrollContainer::-webkit-scrollbar {
+  // @removed perfect-scrollbar
+  visibility: hidden;
+  width: 0 !important;
+}
+
+.cpn-virtualized-table__wrapper .cpn-virtualized-table-row,
+.cpn-virtualized-table__wrapper .cpn-virtualized-table-headerRow {
+  font-weight: 400;
+  outline: none;
+  // overflow: hidden;
+}
+
+.cpn-virtualized-table__wrapper .ReactVirtualized__Table__headerRow,
+.cpn-virtualized-table__wrapper .ReactVirtualized__Table__row {
+  padding-right: 4px !important;
+}
+
+.cpn-virtualized-table__wrapper .cpn-virtualized-table-headerRow > * {
+  font-size: 11px;
+  font-weight: var(--font-semi-bold);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.cpn-virtualized-table__wrapper .cpn-virtualized-table-row {
+  border-bottom: 1px solid #262626;
+  cursor: pointer;
+}
+
+.cpn-virtualized-table__wrapper .cpn-virtualized-table-row.active,
+.cpn-virtualized-table__wrapper
+  .cpn-virtualized-table-row:hover:not(.cpn-virtualized-table-row--no-hover-effect) {
+}
+
+// .cpn-virtualized-table__wrapper .cpn-virtualized-table-row:last-child {
+//   border-bottom: none;
+// }
+
+.cpn-virtualized-table__wrapper .cpn-virtualized-table-row .pval-nopad {
+  padding: 0 !important;
+}
+
+.cpn-virtualized-table__loadingwrapper,
+.cpn-virtualized-table__row--full-width {
+  width: 100%;
+  text-align: center;
+}
+
+.cpn-virtualized-table__loadingwrapper {
+  padding-top: rem(5);
+
+  p {
+    margin: 0;
+  }
+
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  > :first-child {
+    margin-right: rem(5);
+  }
+}
+
+.cpn-virtualized-table__headerrow {
+  border-bottom: 1px solid #262626;
+  z-index: 1;
+  overflow: visible !important;
+  overflow: initial !important;
+}
+
+.cpn-virtualized-table__wrapper .cpn-virtualized-table__headerRow--transparent {
+  background-color: var(--shark-300);
+}
+
+.cpn-virtualized-table__headerrow,
+.cpn-virtualized-table__headerrow > * {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.cpn-virtualized-table__headerrow > * {
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+}
+
+.cpn-virtualized-table__headerrow .ReactVirtualized__Table__sortableHeaderIcon {
+  height: 100%;
+}
+
+.cpn-virtualized-table__headercell--underlined {
+  text-decoration: underline;
+}
+
+.cpn-virtualized-table__multiselect {
+  margin-right: rem(20);
+  opacity: 0;
+}
+
+.cpn-virtualized-table__multiselect:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.cpn-virtualized-table__multiselect:last-child {
+  margin-right: 0;
+}
+
+.cpn-virtualized-table__multiselect.cpn-virtualized-table__multiselect--active {
+  opacity: 1;
+}
+
+.cpn-virtualized-table__cellwrapper {
+  text-align: left;
+
+  p {
+    margin: 0;
+  }
+
+  &--clipwrap {
+    text-overflow: clip;
+  }
+}
+
+.cpn-virtualized-table-row:hover {
+  background-color: var(--cool-grey-95);
+}
+
+// .cpn-virtualized-table-row.even-stripe,
+// .cpn-virtualized-table-row.even-stripe:hover {
+//   background: #1f2b33;
+// }
+
+// .cpn-virtualized-table-row.odd-stripe:hover {
+//   background: transparent;
+// }
+
+// .cpn-virtualized-table-row.odd-stripe:hover {
+//   background: transparent;
+// }
+
+// .cpn-virtualized-table-row.odd-stripe:hover {
+//   background: transparent;
+// }
+
+// table
+.table__title-iconwrapper {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 9px;
+  margin: -1px 0 0 4px;
+  opacity: 0;
+}
+
+.table__title-iconwrapper i.fa.fa-sort-down,
+.table__title-iconwrapper i.fa.fa-sort-up {
+  font-size: rem(11) !important;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.table__title-titlewrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  // overflow: hidden;
+}
+
+.table__title-titlewrapper > * {
+  min-width: 0;
+  white-space: nowrap;
+  // overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ReactVirtualized__Table__headerRow,
+.ReactVirtualized__Table__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ReactVirtualized__Table__row {
+  &:hover {
+    background-color: var(--cool-grey-85);
+    cursor: pointer;
+  }
+}
+
+.ReactVirtualized__Table__headerTruncatedText {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  // overflow: hidden;
+}
+
+.ReactVirtualized__Table__headerRow {
+  font-size: rem(11);
+  font-weight: var(--font-bold);
+  color: var(--boulder);
+  text-transform: capitalize;
+}
+
+.ReactVirtualized__Table__headerColumn,
+.ReactVirtualized__Table__rowColumn {
+  margin-right: rem(10);
+  min-width: 0;
+}
+
+.ReactVirtualized__Table__rowColumn {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  &.align-self-top {
+    align-self: flex-start !important;
+  }
+}
+
+.ReactVirtualized__Table__headerColumn:first-of-type,
+.ReactVirtualized__Table__rowColumn:first-of-type {
+  margin-left: rem(10);
+}
+
+.ReactVirtualized__Table__sortableHeaderColumn {
+  cursor: pointer;
+  &:hover .table__title-iconwrapper {
+    opacity: 1;
+  }
+}
+
+.ReactVirtualized__Table__sortableHeaderIconContainer {
+  display: flex;
+  align-items: center;
+}
+
+.ReactVirtualized__Table__sortableHeaderIcon {
+  flex: 0 0 rem(24);
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+}
+
+.pair-table-row {
+  border-bottom: 0 !important;
+  padding: 0 12px;
+}

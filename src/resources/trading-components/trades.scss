@@ -1,0 +1,70 @@
+// TRADE HISTOY
+.trade-history__header {
+  padding: 8px 8px 4px 16px;
+  font-size: rem(11);
+  // font-weight: var(--font-nor);
+  color: var(--trade-history__header--color);
+  background-color: var(--trade-history__header--bg-color);
+  white-space: nowrap;
+  border-bottom: 1px solid var(--trade-history__header--border-bottom-color);
+}
+
+.trade-history__item {
+  color: var(--trade-history__item--color);
+  font-size: rem(12);
+  padding: 0 12px 0 16px;
+}
+
+.trade-history__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+// // animation on change
+// .trade-history__container .ReactVirtualized__Grid__innerScrollContainer > div:first-child {
+//   position: relative;
+//   z-index: 0;
+// }
+
+// .trade-history__container .ReactVirtualized__Grid__innerScrollContainer > div:first-child:before {
+//   content: "";
+//   z-index: -1;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background: #eac85e;
+//   opacity: 0;
+//   -webkit-animation: 0.5s ease-out highlightPseudo;
+//   animation: 0.5s ease-out highlightPseudo;
+// }
+
+.trade-history__header__amount,
+.trade-history__item__amount {
+  width: rem(60);
+  flex: 1;
+  padding-right: 6px;
+  text-align: right;
+}
+
+.trade-history__header__price,
+.trade-history__item__price {
+  text-align: left;
+  width: rem(76);
+  flex: 1;
+}
+
+.trade-history__header__date {
+  width: rem(60);
+  flex: 1;
+  text-align: right;
+  padding-right: 8px;
+}
+
+.trade-history__item__date {
+  width: rem(60);
+  flex: 1;
+  text-align: right;
+  padding-right: 4px;
+}

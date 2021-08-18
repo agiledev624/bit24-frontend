@@ -1,0 +1,111 @@
+html,
+body {
+    background: #fafafa none repeat scroll 0 0;
+    color: #1b1010;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+:root {
+    --toolbar-bg: #fafafa;
+}
+
+#library-container {
+    border: none;
+    background: transparent;
+}
+
+.chart-page .chart-container {
+    border-color: #fafafa;
+    background-color: #fafafa;
+}
+
+/**
+TOOLBAR > FIRST/LAST button
+*/
+div[class^="group-"]:first-child {
+    border-bottom-left-radius: 0;
+}
+
+div[class^="group-"]:last-child {
+    border-bottom-left-radius: 0;
+}
+
+/**
+TOOLBAR INTERVALS
+*/
+#header-toolbar-intervals > .apply-common-tooltip,
+#header-toolbar-chart-styles > .apply-common-tooltip,
+#header-toolbar-properties.apply-common-tooltip,
+.group-wWM3zP_M- > .apply-common-tooltip {
+    border-color: #fafafa;
+    color: #1b1010;
+    background-color: #fafafa;
+}
+
+.group-wWM3zP_M-,
+.js-rootresizer__contents,
+.chart-controls-bar-buttons {
+    background-color: #fafafa;
+}
+
+.chart-controls-bar {
+    background-color: #fafafa;
+}
+
+/**
+DROPDOWN
+*/
+
+.menu-1fA401bY-.isOpened-1939ai3F- {
+    background: #fafafa;
+    border-color: #fafafa;
+    color: #1b1010;
+}
+
+.arrowWrap-r5l5nQXU- {
+    color: #ADAFB5;
+}
+
+.menuBox-3CsColoQ- {
+    padding: 0;
+    background: #fafafa;
+}
+
+.menuBox-3CsColoQ- .item-2xPVYue0- {
+    padding: 7px;
+    height: 16px;
+    position: relative;
+    overflow: hidden;
+    color: #a3a4a8;
+    background: #fafafa;
+}
+
+.separator-25lkUpN-- {
+    background: #fafafa;
+}
+
+.menuBox-3CsColoQ- .item-2xPVYue0- .isActive-2j-GhQs_- {
+    background: #fafafa;
+}
+
+.menuBox-3CsColoQ- .item-2xPVYue0-:hover {
+    color: #1b1010;
+}
+
+.feature-no-touch .item-2xPVYue0-.isActive-2j-GhQs_-:active, 
+.feature-no-touch .item-2xPVYue0-.isActive-2j-GhQs_-:hover, 
+.feature-touch .item-2xPVYue0-.isActive-2j-GhQs_-:active, 
+.item-2xPVYue0-.isActive-2j-GhQs_- {
+    color: #1b1010;
+}
+
+.feature-no-touch .button-2ioYhFEY-.isInteractive-20uLObIc-, 
+.feature-no-touch .button-2ioYhFEY-.isInteractive-20uLObIc-:active, 
+.feature-no-touch .button-2ioYhFEY-.isInteractive-20uLObIc-:hover, 
+.feature-touch .button-2ioYhFEY-.isInteractive-20uLObIc-:active {
+    color: #a3a4a8;
+}
+
+.isActive-22S-lGpa- {
+    color: #1b1010 !important;
+}

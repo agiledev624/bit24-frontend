@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@import "./normalize.scss";
+@import "./variables.scss";
+@import "./include-media.scss";
+@import "./e-components/e-markets.scss";
+@import "./e-components/e-assets.scss";
+@import "./e-components/e-market-history/index.scss";
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+$base_font-size: 12px !default;
+
+/*
+See: https://www.smashingmagazine.com/2016/05/fluid-typography/
+1. without support for anything, the font size will be the minimum font-size (9px) so nothing will break.
+2. with support for mediaqueries and not vw or calc or both then the font will jump up a pixel size at every appropriate breakpoint (I'm using @include-media for syntactic-sugar, but you could rewrite without this)
+3. with support for mediaqueries and calc and vw it will work as the article describes, with the fixes for older Safari and IE too
+Ain't it pretty!? Haha - works well tho :)
+*/
+$base_font-size-min: $base_font-size - 2px;
+$base_font-size-min-at-width: 320px;
+$base_font-size-max: 14px;
+$base_font-size-max-at-width: 2560px;
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+html {
+  background-color: var(--shark-200);
+  color: var(--silver-300);
+  font-family: var(--font-family--plex-sans), sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.4; // 24px at font-size 16px
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 1200px;
+  text-rendering: optimizeLegibility;
+  font-size: $base_font-size-min;
+  $steps: strip-units($base_font-size-max - $base_font-size-min);
+  $increment: ($base_font-size-max-at-width - $base_font-size-min-at-width) /
+    $steps;
+  @for $i from 0 through ($steps - 1) {
+    $base_font-size-at-breakpoint: $base_font-size-min-at-width +
+      $i *
+      $increment;
+    @include media(">#{$base_font-size-at-breakpoint}") {
+      font-size: $base_font-size-min +
+        ($base_font-size-max - $base_font-size-min) *
+        ($base_font-size-at-breakpoint - $base_font-size-min-at-width) /
+        ($base_font-size-max-at-width - $base_font-size-min-at-width);
+      font-size: calc(
+        #{$base_font-size-min} + #{strip-units(
+            $base_font-size-max - $base_font-size-min
+          )} * (100vw - #{$base_font-size-min-at-width}) / #{strip-units(
+            $base_font-size-max-at-width - $base_font-size-min-at-width
+          )}
+      );
+    }
+  }
+  @include media(">#{$base_font-size-max-at-width}") {
+    font-size: $base_font-size-max;
+  }
+}
+
+// :root,
+// body {
+//   background-color: var(--shark-200);
+//   color: var(--silver-300);
+//   font-size: ms(1);
+//   font-family: var(--font-family--avenir-next);
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   -webkit-text-size-adjust: 100%;
+//   // min-width: 1440px;
+// }
+
+// Convert value px to rem sass mixin
+@function rem($px, $base: $base_font-size) {
+  @if (unitless($px)) {
+    $px: $px * 1px;
+  }
+
+  @if (unitless($base)) {
+    $base: $base * 1px;
+  }
+
+  @return $px / $base * 1rem;
+}
+
+/*
+    * Remove text-shadow in selection highlight:
+    * https://twitter.com/miketaylr/status/12228805301
+    *
+    * Vendor-prefixed and regular ::selection selectors cannot be combined:
+    * https://stackoverflow.com/a/16982510/7133471
+    *
+    * Customize the background color to match your design.
+    */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+    * A better looking default horizontal rule
+    */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+    * Remove the gap between audio, canvas, iframes,
+    * images, videos and the bottom of their containers:
+    * https://github.com/h5bp/html5-boilerplate/issues/440
+    */
+
+audio,
+canvas,
+iframe,
+img,
+svg video {
+  vertical-align: middle;
+}
+
+/*
+* Remove default fieldset styles.
+*/
+Î fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+* Allow only vertical resizing of textareas.
+*/
+
+textarea {
+  resize: vertical;
+}
+@import "./utils.scss";
+@import "./components/index.scss";
+@import "./trading-components/index.scss";
+
+@-webkit-keyframes highlight {
+  0% {
+    background-color: none;
+  }
+
+  10% {
+    background-color: rgba(234, 200, 94, 0.5);
+  }
+
+  100% {
+    background-color: none;
+  }
+}
+
+@keyframes highlight {
+  0% {
+    background-color: none;
+  }
+
+  10% {
+    background-color: rgba(234, 200, 94, 0.5);
+  }
+
+  100% {
+    background-color: none;
+  }
+}
+
+@-webkit-keyframes highlightAlt {
+  0% {
+    background-color: rgba(195, 195, 195, 0.25);
+  }
+
+  10% {
+    background-color: rgba(234, 200, 94, 0.5);
+  }
+
+  100% {
+    background-color: rgba(195, 195, 195, 0.25);
+  }
+}
+
+@keyframes highlightAlt {
+  0% {
+    background-color: rgba(195, 195, 195, 0.25);
+  }
+
+  10% {
+    background-color: rgba(234, 200, 94, 0.5);
+  }
+
+  100% {
+    background-color: rgba(195, 195, 195, 0.25);
+  }
+}
+
+@-webkit-keyframes highlightPseudo {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes highlightPseudo {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

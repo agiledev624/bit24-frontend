@@ -1,0 +1,108 @@
+html,
+body {
+  background: #191E21 none repeat scroll 0 0;
+  color: #999;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+:root {
+  --toolbar-bg: #191E21;
+}
+
+#library-container {
+  border: none;
+  background: transparent;
+}
+
+.chart-page .chart-container {
+  border-color: #191E21;
+  background-color: #191E21;
+}
+
+/**
+TOOLBAR > FIRST/LAST button
+*/
+div[class^="group-"]:first-child {
+  border-bottom-left-radius: 0;
+}
+
+div[class^="group-"]:last-child {
+  border-bottom-left-radius: 0;
+}
+
+/**
+TOOLBAR INTERVALS
+*/
+#header-toolbar-intervals > .apply-common-tooltip,
+#header-toolbar-chart-styles > .apply-common-tooltip,
+#header-toolbar-properties.apply-common-tooltip,
+.group-wWM3zP_M- > .apply-common-tooltip {
+  border-color: #191E21;
+  color: #999;
+  background-color: #191E21;
+}
+#header-toolbar-intervals .isActive-22S-lGpa-,
+#header-toolbar-chart-styles > .apply-common-tooltip.isActive-22S-lGpa- {
+  color: #35b073 !important;
+}
+
+.group-wWM3zP_M-,
+.js-rootresizer__contents,
+.chart-controls-bar-buttons {
+  background-color: #191E21;
+}
+
+.chart-controls-bar {
+  background-color: #191E21;
+}
+
+/**
+DROPDOWN
+*/
+
+.menu-1fA401bY-.isOpened-1939ai3F- {
+  background: #191E21;
+  border-color: #191E21;
+  color: #adafb5;
+}
+
+.arrowWrap-r5l5nQXU- {
+  color: #adafb5;
+}
+
+.menuBox-3CsColoQ- {
+  padding: 0;
+  background: #191E21;
+}
+
+.menuBox-3CsColoQ- .item-2xPVYue0- {
+  padding: 7px;
+  height: 16px;
+  position: relative;
+  overflow: hidden;
+  background: #191E21;
+}
+
+.separator-25lkUpN-- {
+  background: #191E21;
+}
+
+
+.menuBox-3CsColoQ- .item-2xPVYue0-:hover,
+.menuBox-3CsColoQ- .item-2xPVYue0-.isActive-2j-GhQs_- {
+  color: #35b073 !important;
+  background-color: #343538 !important;
+}
+
+.feature-no-touch .button-2ioYhFEY-.isInteractive-20uLObIc-,
+.feature-no-touch .button-2ioYhFEY-.isInteractive-20uLObIc-:active,
+.feature-no-touch .button-2ioYhFEY-.isInteractive-20uLObIc-:hover,
+.feature-touch .button-2ioYhFEY-.isInteractive-20uLObIc-:active {
+  color: #adafb5;
+}
+
+.layout__area--left .drawingToolbar-U3_QXRof-,
+.layout__area--left .inner-1xuW-gY4-,
+.layout__area--left .group-2JyOhh7Z- {
+  background-color: transparent;
+}

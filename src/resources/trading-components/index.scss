@@ -1,0 +1,55 @@
+@import "./market.scss";
+@import "./orderbook.scss";
+@import "./trades.scss";
+@import "./market-history.scss";
+@import "./order-form.scss";
+@import "./balances.scss";
+@import "./calculator.scss";
+
+.trading-main-layout {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  background-color: var(--base-bg-color);
+  position: relative;
+
+  .trading-main-free-grid {
+    flex: 1;
+    position: absolute;
+    left: 320px;
+    top: 0;
+    bottom: 0;
+    width: calc(100% - 320px);
+    right: 8px;
+    // padding-right: 8px;
+
+    & > div {
+      height: 400px !important;
+    }
+  }
+  .trading-main-vertical-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    // border-right: 2px solid var(--tuatara-500);
+    min-height: 100%;
+    background-color: var(--cool-grey-100) !important;
+  }
+  .trading-main-layout__paddingwrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .trading-main-layout__item:last-child {
+      height: 100%;
+    }
+  }
+}
+
+.position-footer {
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
+  width: 100%;
+  // padding: 0 rem(8);
+}

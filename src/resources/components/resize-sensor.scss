@@ -1,0 +1,34 @@
+.resizesensor-trigger {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.resizesensor-trigger,
+.resizesensor-trigger > div,
+.resizesensor-contract:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.resizesensor-trigger > div {
+  background: #eee;
+  overflow: auto;
+}
+
+.resizesensor-contract:before {
+  width: 200%;
+  height: 200%;
+}
+
+.resizesensor-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}

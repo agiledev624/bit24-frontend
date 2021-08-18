@@ -1,0 +1,126 @@
+/** tabs component **/
+.tabs {
+  display: flex;
+  width: 100%;
+  // height: 100%;
+  font-size: 14px;
+  font-weight: var(--font-semi-bold);
+  border-bottom: 1px solid var(--cool-grey-85);
+
+  .tab {
+    padding: 8px 16px;
+    color: var(--cool-grey-30);
+
+    // color: var(--dove-gray);
+    cursor: pointer;
+    // margin-right: rem(11);
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &.active {
+      color: var(--white);
+      border-bottom: 1px solid var(--blue-40);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: var(--white);
+    }
+  }
+}
+
+/*
+* tabs buttons 
+*/
+.tabs.tab-radio-buttons {
+  &.border-radius {
+    border-radius: var(--button-border-radius);
+    border-bottom: 0;
+    .tab {
+      &:first-child {
+        border-top-left-radius: var(--button-border-radius);
+        border-bottom-left-radius: var(--button-border-radius);
+      }
+      &:last-child {
+        border-top-right-radius: var(--button-border-radius);
+        border-bottom-right-radius: var(--button-border-radius);
+      }
+    }
+  }
+  .tab {
+    padding: 3px 0;
+    cursor: pointer;
+    flex: 1;
+    border-right: 1px solid var(--cool-grey-80);
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+    background-color: var(--cool-grey-80);
+    height: 32px;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &.active {
+      border-bottom: none;
+      background-color: var(--blue-60);
+    }
+  }
+}
+
+.tabs.tab-dashed-options {
+  justify-content: space-between;
+  .tab {
+    flex: 1;
+    padding: 3px 0;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid var(--emperor);
+
+    &.active {
+      background-color: var(--shark-200);
+    }
+  }
+}
+
+/* dropdown for tabs */
+.ui-tabs--dropdown {
+  font-size: inherit;
+  .cpn-select-dropdown-control {
+    background: none;
+    border: none;
+    padding: 0 25px 0 0;
+  }
+
+  .cpn-select-dropdown-menu {
+    min-width: 105px;
+    font-size: rem(11);
+  }
+  .cpn-select-dropdown-arrow-wrapper {
+    font-size: inherit;
+    line-height: 1;
+  }
+  .cpn-dropdown-control {
+    background-color: inherit !important;
+    border: none !important;
+    padding: 0;
+    padding-right: rem(15);
+    .dropdown-arrow-wrapper {
+      right: 0;
+    }
+  }
+  .cpn-dropdown-menu {
+    margin-top: 0;
+    background-color: #0b1218;
+    border-color: #0b1218;
+    width: 200%;
+  }
+}

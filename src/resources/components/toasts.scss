@@ -1,0 +1,151 @@
+.toasts-container {
+  &.top-left {
+    top: rem(10);
+    left: rem(10);
+  }
+
+  &.top-right {
+    top: rem(40);
+    right: rem(10);
+  }
+
+  &.top-center {
+    top: rem(10);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.bottom-left {
+    bottom: rem(10);
+    left: rem(10);
+  }
+
+  &.bottom-right {
+    bottom: rem(10);
+    right: rem(10);
+  }
+
+  &.bottom-center {
+    bottom: rem(10);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.toast {
+  text-align: left;
+  width: 100%;
+  white-space: pre-line;
+  /* min-height: rem(50); */
+  margin-bottom: rem(7);
+  border-radius: rem(2);
+  padding: rem(7) rem(15);
+  font-size: rem(14);
+  background-color: var(--tuatara-400);
+  border: 1px solid var(--tuatara-400);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+
+  &-animing {
+    animation-name: fadeInUp;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    &__content {
+      flex: 1;
+      text-transform: uppercase;
+      color: #9595a2;
+      font-size: rem(16);
+    }
+  }
+
+  &__icon {
+    margin-right: rem(7);
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__content {
+    color: var(--white);
+    padding: rem(5) 0;
+  }
+
+  &-success {
+    border-color: var(--mountain-meadow);
+  }
+  &-success &__icon {
+    color: var(--mountain-meadow);
+  }
+
+  &-info {
+    color: #3a87ad;
+    border-color: #bce8f1;
+  }
+  &-warning {
+    border-color: #fbeed5;
+  }
+  &-error {
+    border-color: var(--alizarin-crimson);
+  }
+  &-error &__icon {
+    color: var(--alizarin-crimson);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fixed-container {
+  position: fixed;
+  max-height: calc(100vh - rem(10));
+  max-width: rem(320);
+  width: rem(320);
+  z-index: 99999999;
+}
+
+.toasts-wrapper {
+  position: relative;
+  width: 100%;
+  max-height: calc(100vh - rem(10));
+  padding: rem(15) 0;
+}
+
+.toasts {
+  width: 100%;
+  overflow: hidden;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: rem(12);
+}
+
+.toast__btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  font-size: rem(14);
+  padding: rem(3) 0;
+  transform: translateX(-50%);
+  width: 100%;
+  cursor: pointer;
+  background: #1b1b1b;
+  border-radius: var(--border-radius);
+  border: 1px solid #4b4b4b;
+  color: white;
+  &:focus {
+    outline: none;
+  }
+}

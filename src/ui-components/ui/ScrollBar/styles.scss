@@ -1,0 +1,43 @@
+@import "../../../../node_modules/perfect-scrollbar/css/perfect-scrollbar.css";
+
+.cpn-scrollbar-container {
+  position: relative;
+  height: 100%;
+
+  .ReactVirtualized__Grid.ReactVirtualized__List {
+    overflow: inherit !important;
+  }
+}
+
+.ps .ps__rail-y {
+  right: 0 !important;
+  left: auto !important;
+}
+
+.ps .ps__rail-x {
+  top: auto !important;
+  bottom: 0 !important;
+}
+
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y:hover,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-y.ps--clicking {
+  background: transparent;
+}
+
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: #aaa;
+  width: 6px;
+}
+
+.ps__rail-x:hover > .ps__thumb-x,
+.ps__rail-x:focus > .ps__thumb-x,
+.ps__rail-x.ps--clicking .ps__thumb-x {
+  background-color: #aaa;
+  height: 6px;
+}

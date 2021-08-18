@@ -1,0 +1,223 @@
+
+/**
+ * id, // [0]
+  symbol,// [1]
+  desc,// [2]
+  baseCc,// [3]
+  counterCc,// [4]
+  tickerType,// [5] // 0: trading, 1: funding/lending
+  tradable,// [6]
+  marginable,// [7] // 0: disabled, 1: enabled, 2: no support
+  decimalPlaceAmount,// [9]
+  decimalPlacePrice,// [10],
+  minAmount, //[11]
+  maxAmount, //[12]
+  maxPrice, // [13]
+  open,// [14]
+  high,// [15]
+  low,// [16]
+  close,// [17]
+  change,// [18]
+  changePercent,// [19]
+  baseVolume,// [20]
+  counterVolume,// [21],
+  isActive, // [22]
+  maxLeverage, // [23]
+  fundingRate, // [24]
+ */
+export const assets = [{
+  ccy: 'BTCUSDT',
+  price: 1,
+  base: 'BTC',
+  counter: 'USDT',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 233311,
+  dailyChangePerc: 2.4,
+  niceCcy: `BTC/USDT`,
+  priceChange: 1.2,
+  name: 'Bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}, {
+  ccy: 'eosusdt',
+  price: 2,
+  base: 'eos',
+  counter: 'usdt',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 33311,
+  dailyChangePerc: -2.4,
+  niceCcy: `eos/usdt`,
+  priceChange: 1.2,
+  name: 'bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}, {
+  ccy: 'eosusdt',
+  price: 2,
+  base: 'eos',
+  counter: 'usdt',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 33311,
+  dailyChangePerc: -2.4,
+  niceCcy: `eos/usdt`,
+  priceChange: 1.2,
+  name: 'bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}, {
+  ccy: 'eosusdt',
+  price: 2,
+  base: 'eos',
+  counter: 'usdt',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 33311,
+  dailyChangePerc: -2.4,
+  niceCcy: `eos/usdt`,
+  priceChange: 1.2,
+  name: 'bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}, {
+  ccy: 'eosusdt',
+  price: 2,
+  base: 'eos',
+  counter: 'usdt',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 33311,
+  dailyChangePerc: -2.4,
+  niceCcy: `eos/usdt`,
+  priceChange: 1.2,
+  name: 'bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}, {
+  ccy: 'eosusdt',
+  price: 2,
+  base: 'eos',
+  counter: 'usdt',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 33311,
+  dailyChangePerc: -2.4,
+  niceCcy: `eos/usdt`,
+  priceChange: 1.2,
+  name: 'bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}, {
+  ccy: 'eosusdt',
+  price: 2,
+  base: 'eos',
+  counter: 'usdt',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 33311,
+  dailyChangePerc: -2.4,
+  niceCcy: `eos/usdt`,
+  priceChange: 1.2,
+  name: 'bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}, {
+  ccy: 'eosusdt',
+  price: 2,
+  base: 'eos',
+  counter: 'usdt',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 33311,
+  dailyChangePerc: -2.4,
+  niceCcy: `eos/usdt`,
+  priceChange: 1.2,
+  name: 'bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}, {
+  ccy: 'eosusdt',
+  price: 2,
+  base: 'eos',
+  counter: 'usdt',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 33311,
+  dailyChangePerc: -2.4,
+  niceCcy: `eos/usdt`,
+  priceChange: 1.2,
+  name: 'bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}, {
+  ccy: 'eosusdt',
+  price: 2,
+  base: 'eos',
+  counter: 'usdt',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 33311,
+  dailyChangePerc: -2.4,
+  niceCcy: `eos/usdt`,
+  priceChange: 1.2,
+  name: 'bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}, {
+  ccy: 'eosusdt',
+  price: 2,
+  base: 'eos',
+  counter: 'usdt',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 33311,
+  dailyChangePerc: -2.4,
+  niceCcy: `eos/usdt`,
+  priceChange: 1.2,
+  name: 'bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}, {
+  ccy: 'eosusdt',
+  price: 2,
+  base: 'eos',
+  counter: 'usdt',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 33311,
+  dailyChangePerc: -2.4,
+  niceCcy: `eos/usdt`,
+  priceChange: 1.2,
+  name: 'bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}, {
+  ccy: 'eosusdt',
+  price: 1,
+  base: 'eos',
+  counter: 'usdt',
+  high: 1.5,
+  low: 0.9,
+  lastPrice: 1.2,
+  volume: 133311,
+  dailyChangePerc: -2.4,
+  niceCcy: `eos/usdt`,
+  priceChange: 1.2,
+  name: 'bitcoin',
+  fundingRate: 0.02,
+  leverage: 0.2
+}];

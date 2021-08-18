@@ -1,0 +1,10 @@
+.virtual-list__container {
+  // using flex
+  flex: 1;
+
+  .virtal-list__container__loadingwrapper {
+    padding-top: rem(5);
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,484 @@
+.orderBook {
+  overflow: hidden;
+  font-size: rem(12);
+  height: 100%;
+
+  &.scroll-y {
+    overflow-y: auto;
+  }
+}
+
+.orderBook table {
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0 2px;
+  width: 100%;
+}
+.orderBook th {
+  font-size: rem(11);
+  font-weight: var(--font-medium);
+  color: var(--shark-800);
+  white-space: nowrap;
+}
+
+.orderBook th,
+.orderBook td {
+  text-align: right;
+  padding: 0px;
+}
+
+.orderBook:not(.show-order-btns) th,
+.orderBook:not(.show-order-btns) td {
+  width: 20%;
+}
+
+// .orderBook:not(.show-order-btns) th:first-child,
+// .orderBook:not(.show-order-btns) td:first-child {
+//   width: 20%;
+//   text-align: left;
+// }
+
+.orderBook .table-container {
+  margin-top: -4px;
+}
+
+.orderBook .table-container-inner {
+  overflow: hidden;
+  padding: 0 0 4px 0;
+}
+
+.orderBook thead tr,
+.orderBook td {
+  border: 0 !important;
+}
+
+.orderBook tbody tr td:last-child {
+  // padding-right: 16px;
+}
+
+.orderBook th > div {
+  height: 20px;
+  text-transform: capitalize;
+  line-height: 20px;
+}
+
+.orderBook th.btn,
+.orderBook td.td-order-btn {
+  font-size: 10px;
+  text-align: center;
+}
+
+.orderBook .td-order-btn button {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  min-height: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  display: none;
+  &.sell {
+    color: var(--burnt-sienna);
+    background-color: rgba(232, 112, 79, 0.4);
+  }
+
+  &.buy {
+    color: var(--mountain-meadow);
+    background-color: rgba(82, 179, 112, 0.4);
+  }
+
+  &:hover {
+    color: var(--white);
+  }
+}
+
+.orderBook tr:hover td.td-order-btn button {
+  display: block;
+}
+
+.orderBook td {
+  height: 20px;
+  color: var(--alto-200);
+  overflow: hidden;
+}
+
+.orderBook td > div {
+  position: relative;
+  height: 20px;
+  & > span {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+  }
+}
+
+.orderBook .bids tbody tr:hover {
+  background: rgba(grey, 0.3);
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.orderBook .bids tbody tr:active {
+  background: rgba(32, 229, 93, 0.3);
+}
+
+.orderBook .bids td.price {
+  color: var(--mountain-meadow);
+}
+
+.orderBook .asks tbody tr:hover {
+  background: rgba(grey, 0.3);
+  // background: rgba(232, 112, 79, 0.4);
+}
+
+.orderBook .asks tbody tr:active {
+  background: rgba(255, 99, 56, 0.4);
+}
+
+.orderBook .asks td.price {
+  color: var(--burnt-sienna);
+}
+
+.orderBook tr.empty,
+.orderBook tr.empty td {
+  -webkit-animation: none !important;
+  animation: none !important;
+}
+
+.orderBook .lastPriceWidget .tooltipWrapper {
+  border: none;
+}
+
+.orderBook .depthBar {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  opacity: 0.2;
+}
+
+.orderBook .bids .depthBar {
+  background-color: #52b370;
+}
+
+.orderBook .asks .depthBar {
+  background-color: #e8704f;
+}
+
+.orderBook .output {
+  position: relative;
+}
+
+// single column
+
+.orderBook.singleColumn.show-order-btns th.price,
+.orderBook.singleColumn.show-order-btns td.price {
+  text-align: left;
+}
+
+.orderBook.singleColumn .table-container {
+  width: 100%;
+  float: none;
+  margin-top: 0;
+  // padding: 0 0px;
+}
+
+.orderBook.singleColumn .table-container:last-child table th {
+  display: none;
+}
+
+.orderBook {
+  &.singleColumn {
+    th {
+      padding-top: 0;
+      height: 24px;
+      padding-right: rem(10);
+      border-bottom: 1px solid var(--cool-grey-85) !important;
+    }
+
+    td {
+      &.sumSize {
+        padding-right: 16px;
+      }
+    }
+  }
+}
+.orderBook.singleColumn th:last-child {
+  padding-right: 16px;
+}
+
+.orderBook.singleColumn td:not(:last-child) {
+  padding-right: rem(10);
+}
+
+.orderBook.show-order-btns th.btn > div,
+.orderBook.show-order-btns td.td-order-btn {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.orderBook.dualColumn {
+  margin-top: 0;
+}
+.orderBook.dualColumn .bids table {
+  border-right: 0;
+}
+
+.orderBook.dualColumn .asks table {
+  border-left: 0;
+}
+
+.orderBook.dualColumn .bids .depthBar {
+  right: 0;
+}
+
+.orderBook.dualColumn .asks .depthBar {
+  left: 0;
+}
+
+.orderBook.dualColumn {
+  .bids {
+    th {
+      &.size {
+      }
+
+      &.price {
+        padding-right: 3px;
+      }
+    }
+
+    td {
+      &.price {
+        .output {
+          padding-right: 3px;
+        }
+      }
+    }
+  }
+
+  .asks {
+    th {
+      &.price {
+      }
+
+      &.size {
+        padding-right: 16px;
+      }
+    }
+
+    td {
+      &.price {
+        padding-left: 3px;
+      }
+
+      &.size {
+        padding-right: 16px;
+      }
+    }
+  }
+}
+
+// .orderBook.dualColumn .lastPriceWidget {
+//   font-size: 1.0769230769rem;
+//   margin: 0 0 2px 0;
+//   display: flex;
+//   height: 25px;
+//   overflow: hidden;
+//   // display: none;
+// }
+
+// .orderBook.dualColumn .lastPriceWidget .lastTick {
+//   line-height: 23px;
+//   -webkit-box-flex: 1;
+//   flex-grow: 1;
+//   overflow: hidden;
+//   font-size: 1.0769230769rem;
+// }
+
+// last price widget
+.lastPriceWidget {
+  font-weight: 500;
+  height: 36px;
+  // line-height: 22px;
+  text-align: left;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  // background-color: #313333;
+  border-bottom: 1px solid var(--cool-grey-85);
+  border-top: 1px solid var(--cool-grey-85);
+  .lastTick {
+    font-size: rem(16);
+    font-weight: var(--font-bold);
+    i {
+      left: 0.3076923077rem;
+      vertical-align: baseline;
+      line-height: 10px;
+    }
+
+    &.lastTick--up i {
+      transform: rotate(180deg);
+    }
+  }
+
+  .divider {
+    color: #000;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .limits {
+    margin-top: 0.0769230769em;
+    font-weight: var(--font-semi-bold);
+    color: var(--gray-100);
+
+    & > span {
+      margin: 0 0.2307692308rem;
+    }
+
+    // .fairPrice {
+    // color: rgba(0, 0, 0, 0.7);
+    // }
+  }
+}
+
+.orderBook .lastPriceWidget {
+  padding: 2px 0;
+}
+
+.orderBook.singleColumn .limits {
+  margin-top: 0;
+}
+
+// book loading
+.table-container.loading table,
+.orderBook.dualColumn.loading table {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0.3;
+}
+
+.table-container.loading:after,
+.orderBook.dualColumn.loading:after {
+  content: "";
+  position: absolute;
+  top: 1.7692307692rem;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+  background: url("https://static.bitmex.com/img/throbber.gif") no-repeat 50%
+    center;
+  opacity: 1;
+  height: 20px;
+  width: 80px;
+}
+
+// animation on change
+.animsOn td.isNew {
+  position: relative;
+  z-index: 0;
+}
+
+.animsOn td.isNew:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #eac85e;
+  opacity: 0;
+  -webkit-animation: 0.5s ease-out highlightPseudo;
+  animation: 0.5s ease-out highlightPseudo;
+}
+
+.animsOn td.isNew.highlightDec:before {
+  background: rgba(232, 112, 79, 0.8);
+}
+
+.animsOn td.isNew.highlightInc:before {
+  background: rgba(82, 179, 112, 0.8);
+}
+
+.animsOn td.isNewDisable:before {
+  content: none;
+  -webkit-animation: none;
+  animation: none;
+}
+
+.animsOn tr.isNew {
+  -webkit-animation: 0.5s ease-out highlight;
+  animation: 0.5s ease-out highlight;
+}
+
+.animsOn tr.isNew:nth-of-type(odd) {
+  -webkit-animation: 0.5s ease-out highlightAlt;
+  animation: 0.5s ease-out highlightAlt;
+}
+
+.order-book__setting-icon {
+  width: 14px;
+  height: 14px;
+  fill: var(--gray-100);
+
+  &:hover {
+    fill: var(--white);
+  }
+}
+
+.order-book__setting-menu {
+  width: 253px;
+  padding: 9px;
+
+  .title {
+    font-size: 12px;
+    color: var(--silver-300);
+    margin-bottom: 15px;
+  }
+
+  .select-column {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .label {
+      margin-right: 11px;
+      font-weight: normal;
+      font-size: 11px;
+    }
+
+    .radio-input {
+      margin-right: 7px;
+      font-size: 10px;
+      font-weight: normal;
+      color: var(--silver-300);
+    }
+  }
+
+  li {
+    font-size: 12px;
+    font-weight: normal;
+    color: var(--silver-300);
+    margin-bottom: 10px;
+
+    .orderbook__input-group {
+      margin-bottom: 7px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .input-inline input {
+        width: 80px;
+      }
+      .input-desc {
+        color: var(--dusty-gray-200);
+        font-size: 11px;
+      }
+    }
+  }
+}

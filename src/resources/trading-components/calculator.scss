@@ -1,0 +1,57 @@
+.calculator__container {
+  padding: rem(8);
+}
+
+.calculator {
+  .choose-side {
+    display: flex;
+    margin-top: 5px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 21px;
+    justify-content: space-around;
+    margin-bottom: 6px;
+
+    &.choose-side--border-bottom {
+      border-bottom: 1px solid var(--tuna);
+      padding-bottom: 6px;
+    }
+  }
+
+  .title {
+    color: var(--boulder);
+  }
+
+  .radio-container {
+    width: 10px;
+    height: 10px;
+
+    .radio-checkmark:after {
+      width: 6px;
+      height: 6px;
+    }
+  }
+
+  .radio-input.primary .radio-container {
+    .radio-checkmark:after {
+      background: var(--forest-green);
+    }
+    input:checked ~ .radio-checkmark {
+      border-color: var(--forest-green);
+    }
+  }
+
+  .result {
+    margin-top: 4px;
+    width: 100%;
+    background: var(--outer-space);
+    padding: 10px;
+    border-radius: 3px;
+    font-size: rem(11);
+  }
+
+  &.liq-price .result {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

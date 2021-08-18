@@ -1,0 +1,38 @@
+.e-market-history-container {
+  display: flex;
+  flex-direction: column;
+  .ReactVirtualized__Table__headerRow {
+    z-index: 1;
+    // background-color: var(--cool-grey-90) !important;
+    border-bottom: 1px solid var(--cool-grey-85);
+    font-size: 11.5px;
+    font-weight: var(--font-bold);
+    color: var(--cool-grey-30);
+  }
+  .track-vertical {
+    right: 2px;
+    bottom: 2px;
+    top: 32px;
+    & > div {
+      background-color: grey !important;
+      border-radius: 4px !important;
+    }
+  }
+  .track-horizontal {
+    left: 2px;
+    right: 8px;
+    bottom: 2px;
+    width: calc(100% - 8px);
+    & > div {
+      background-color: grey !important;
+      border-radius: 4px !important;
+    }
+  }
+}
+
+.position-history-table {
+  .ReactVirtualized__Table__row:last-child {
+    border-top: 1px solid rgba(grey, 0.05);
+    font-size: 11px !important;
+  }
+}

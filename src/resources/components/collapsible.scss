@@ -1,0 +1,102 @@
+.collapsible {
+  min-height: 36px;
+  margin-bottom: 0;
+  margin-top: 0;
+  // border: 1px solid var(--tuna-200);
+  // border-radius: var(--border-radius);
+  background-color: var(--cool-grey-95);
+  // border: 1px solid #575757;
+  // box-shadow: 1px 1px 2px rgba(0,0,0,0.4), -1px -1px 2px rgba(0,0,0,0.4);
+  &__h-100 {
+    height: 100%;
+  }
+  &__trigger {
+    &--sibling {
+    }
+  }
+
+  &__contentOuter {
+  }
+
+  &__contentInner {
+    padding: 16px;
+    position: relative;
+  }
+
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: var(--mine-shaft);
+  }
+
+  &__arrow {
+    width: 1rem;
+    font-size: rem(14);
+    margin-right: rem(5);
+    font-weight: bolder;
+  }
+
+  &__header__container {
+    display: none;
+    // display: flex;
+    font-size: rem(12);
+    margin: 0;
+    height: 36px;
+    // height: rem(20);
+    background-color: var(--cool-grey-80);
+    line-height: rem(28);
+    cursor: pointer;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--shark-500);
+
+    &--closed {
+      border-bottom: none;
+      & ~ .collapsible__contentOuter {
+        overflow: hidden;
+      }
+    }
+
+    .collapsible__title {
+      padding-right: rem(5);
+      margin-left: 16px;
+      font-weight: var(--font-semi-bold);
+      color: var(--white);
+      flex: 1;
+      font-size: 14px;
+
+      .collapsible__sub__title__container {
+        display: flex;
+
+        .collapsible__sub__title {
+          text-transform: uppercase;
+          padding-left: rem(5);
+        }
+      }
+    }
+
+    .collapsible__toolbar {
+      color: var(--white);
+      display: flex;
+      margin-right: rem(10);
+      align-items: center;
+
+      & > div {
+        padding-left: 5px;
+      }
+      // .arrow__container {
+      // margin-right: 5px;
+      // }
+    }
+  }
+
+  &__footer__container {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

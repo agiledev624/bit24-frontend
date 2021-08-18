@@ -1,0 +1,69 @@
+@import "~react-grid-layout/css/styles.css";
+@import "~react-resizable/css/styles.css";
+
+@import "./resources/main.scss";
+
+::-webkit-scrollbar {
+  width: 0.6em;
+  height: 0.6em;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(100, 100, 100, 1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 8px;
+  // outline: 1px solid slategrey;
+}
+
+.react-grid-item {
+  // transform: translate(16px, 16px) !important;
+  contain: size layout;
+  // min-width: 320px;
+  border: 1px solid var(--grid-item--border-color);
+  border-radius: 4px;
+  background: var(--grid-item--bg-color) !important;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+
+  &.react-grid-item--dragging > .react-grid-item__section #chart-root,
+  &.react-grid-item--dragging ~ div > .react-grid-item__section #chart-root {
+    pointer-events: none;
+  }
+
+  & > .react-resizable-handle {
+    opacity: 0;
+    z-index: 2;
+    padding: 0 3px 3px 0;
+    box-sizing: border-box;
+    &::after {
+      border-right-color: var(--cool-grey-30);
+      border-bottom-color: var(--cool-grey-30);
+      width: 9px;
+      height: 9px;
+    }
+    .react-resizable-handle:before {
+      bottom: 2px;
+      right: 2px;
+    }
+
+    .react-resizable-handle:after {
+      bottom: 2px;
+      right: 2px;
+    }
+  }
+  &:hover > .react-resizable-handle {
+    opacity: 1;
+  }
+  & .react-grid-item__section {
+    // border: 1px solid #575757;
+    border-radius: var(--border-radius);
+    // box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), -1px -1px 2px rgba(0, 0, 0, 0.4);
+    background: var(--grid-item__section--bg-color) !important;
+    contain: strict;
+    height: 100%;
+    overflow: hidden;
+    // padding: 1px;
+  }
+}
